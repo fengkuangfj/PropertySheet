@@ -1,0 +1,27 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {16424CB2-A4CA-4950-B2BB-1A5C32B49F9D} = s 'CustomPropertySheet Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{D743442D-02A5-40B9-B91D-CC0548D2C172}'
+			Version = s '1.0'
+		}
+	}
+
+	NoRemove *
+	{
+		NoRemove shellex
+		{
+			NoRemove PropertySheetHandlers
+			{
+				ForceRemove MyPropertySheet = s '{16424CB2-A4CA-4950-B2BB-1A5C32B49F9D}'
+			}
+		}
+	}
+}

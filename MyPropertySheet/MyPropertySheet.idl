@@ -1,0 +1,35 @@
+// MyPropertySheet.idl : MyPropertySheet 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(MyPropertySheet.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(A0B202E1-B1B8-49CC-AEFC-93195D683792),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICustomPropertySheet : IDispatch{
+};
+[
+	uuid(D743442D-02A5-40B9-B91D-CC0548D2C172),
+	version(1.0),
+]
+library MyPropertySheetLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(16424CB2-A4CA-4950-B2BB-1A5C32B49F9D)		
+	]
+	coclass CustomPropertySheet
+	{
+		[default] interface ICustomPropertySheet;
+	};
+};
+
+import "shobjidl.idl";
